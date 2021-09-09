@@ -30,41 +30,48 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class   SharedFunctions {
 	
 
-
+	public WebDriver driver;
+	public static String driverPath = "C:\\Selenium\\chromedriver.exe";
 	
 	public SharedFunctions()
 	{
 		super();
 	}
 	 
-	public void initializeDriver() {
-		System.setProperty("webdriver.chrome.driver", ServerPermissions.driverPath);
-		ChromeOptions options = new ChromeOptions();
-		
-		ServerPermissions.driver = new ChromeDriver(options);
-		
-		ServerPermissions.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		ServerPermissions.driver.manage().window().maximize();
-	}
-	
-	
-	
 
-	public void loginServerAdmin()
+	public ChromeDriver InitializeDriver() {
+	
+	System.setProperty("webdriver.chrome.driver", driverPath);
+	ChromeOptions options = new ChromeOptions();
+	
+	driver = new ChromeDriver(options);
+	
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	driver.manage().window().maximize();
+    Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+    System.out.println("Browser Name is : "+cap.getBrowserName());
+    System.out.println("Browser version is : "+cap.getVersion());           
+    System.out.println("Platform is : "+cap.getPlatform().toString());
+	return (ChromeDriver) driver;
+	}
+
+	public void loginServerAdmin(WebDriver driver)
 	{
 		
-      ServerPermissions.driver.findElement(By.id("ctrl_TenantAdmin1_txtUserName")).sendKeys("admin");
-      ServerPermissions.driver.findElement(By.id("ctrl_TenantAdmin1_txtPassword")).sendKeys("1234567a");
-      ServerPermissions.driver.findElement(By.id("ctrl_TenantAdmin1_imgBtnLogin")).click();
+		driver.findElement(By.id("ctrl_TenantAdmin1_txtUserName")).sendKeys("admin");
+		driver.findElement(By.id("ctrl_TenantAdmin1_txtPassword")).sendKeys("1234567a");
+		driver.findElement(By.id("ctrl_TenantAdmin1_imgBtnLogin")).click();
         
 	}
 
-	public  void clickPermissios() {
-		 ServerPermissions.driver.findElement(By.id("ctl00_ctrl_LeftMenuCloud1_hlnkPermissions")).click();
+	public  void clickPermissios(WebDriver driver) {
+		driver.findElement(By.id("ctl00_ctrl_LeftMenuCloud1_hlnkPermissions")).click();
 	}
 	
 	public void TakeScreenshot(WebDriver driver, String TestCaseID, String Status, String ClassName)
@@ -76,7 +83,8 @@ public class   SharedFunctions {
 
 		try {
 			// save the screenshot taken in destination path
-			FileUtils.copyFile(file, new File("E:\\Automation\\Screenshots\\"+ClassName+"\\"+TestCaseID+"_"+Status+".png"));
+			FileUtils.copyFile(file, new File("E:\\Automation\\Screenshots\\"+ClassName+"\\"+Status+"\\"+TestCaseID+"_"+Status+".png"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

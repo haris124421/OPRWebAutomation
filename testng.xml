@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
+  <test thread-count="1" name="Test">
     <classes>
-      <class name="SiteAdministration.ServerPermissions">
-      <methods>
-        <include name="verifyDefaultPermissionGroup" />
-      </methods>
-      </class>
+      <class name="SiteAdministration.NewTest1"/>
+      <class name="SiteAdministration.NewTest"/>
+ 
       
     </classes>
   </test> <!-- Test -->

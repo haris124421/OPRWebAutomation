@@ -3,13 +3,11 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="SiteAdministration.ServerPermissions">
+      <class name="SiteAdministration.NewTest1">
         <methods>
-          <include name="beforeTest"/>
-          <include name="verifyDefaultPermissionGroup"/>
-          <include name="afterTest"/>
+          <include name="DeletePermissionGroupsOtherthanDefault"/>
         </methods>
-      </class> <!-- SiteAdministration.ServerPermissions -->
+      </class> <!-- SiteAdministration.NewTest1 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

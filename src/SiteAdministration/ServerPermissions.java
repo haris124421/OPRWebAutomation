@@ -2,12 +2,14 @@ package SiteAdministration;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,9 +25,7 @@ public class ServerPermissions {
 
 	public String baseUrl = "http://172.20.22.81/OmniPCXRecord/TenantAdmin.aspx";
 
-	public static String driverPath = "C:\\Selenium\\chromedriver.exe";
-
-	public static WebDriver driver;
+	public WebDriver driver;
 	public String SheetName = "29- Permission's";
 
 	
@@ -38,16 +38,12 @@ public class ServerPermissions {
 	UpdateTestResult obj = new UpdateTestResult();
 
 
-	@BeforeTest
+	@BeforeClass
 	public void beforeTest() {
 		
 		System.out.println(this.getClass().getName());
-		((SharedFunctions)sf).initializeDriver();       
-
-		
-		
-
-	}
+		driver=((SharedFunctions)sf).InitializeDriver(); 
+    }
 ////Test ID: 29-01
 ///* 
 //* Verify that default permission group is available 
@@ -69,8 +65,8 @@ public class ServerPermissions {
 
 		try {
 			
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 
 			// Only Admin Data would be present in the table Groups | Descriptions
@@ -125,8 +121,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Get Delete button and check if it's enabled
 			WebElement deletebutton = driver.findElement(By.xpath(
@@ -174,8 +170,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Get Delete button and check if it's enabled
 			//WebElement editbutton = driver.findElement(By.xpath(
@@ -221,8 +217,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on view permissions
 			driver.findElement(By.xpath(
@@ -270,8 +266,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on copy(permission groups)
 			driver.findElement(By.xpath(
@@ -328,8 +324,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on view permissions
 			driver.findElement(By.xpath(
@@ -384,8 +380,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Get the table and row
 			WebElement table = driver.findElement(By.id("gvGroups"));
@@ -467,8 +463,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on Group name and add a new name
 			driver.findElement(By.id("txtGroupName")).sendKeys("Jackets");
@@ -515,8 +511,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on Group name and add a new name
 			driver.findElement(By.id("txtGroupName")).sendKeys("Goal Diggers");
@@ -566,8 +562,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on Group name and add a description
 			driver.findElement(By.id("txtDescription")).sendKeys("This is a new group");
@@ -617,8 +613,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on Group name and add a new name
 			driver.findElement(By.id("txtGroupName")).sendKeys("New_!@#$342%^&*Group3");
@@ -670,8 +666,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on Group name and add a new name
 			driver.findElement(By.id("txtGroupName")).sendKeys("This is a group name a group is created by it now");
@@ -721,8 +717,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on Group name and add a new name
 			String exdemotext = "1.Login to server administration. 2.Go to permissions page under configuration tab from left menu. 3.Click on edit button against any permission group other than default. 4.Expand the Tenants permission. 5.Unassign the view tenant permissionsss|cut off from here";
@@ -773,8 +769,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on Add Users
 			driver.findElement(By.xpath(
@@ -952,8 +948,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1018,8 +1014,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1081,8 +1077,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 			// Click on edit permissions
 			driver.findElement(By.xpath(
 					"/html/body/form/table/tbody/tr[2]/td/table/tbody/tr[4]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[5]/td/div/table/tbody/tr[2]/td[3]/div/img[3]"))
@@ -1148,8 +1144,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1217,8 +1213,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1285,8 +1281,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1353,8 +1349,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1420,8 +1416,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1486,8 +1482,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1552,8 +1548,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1618,8 +1614,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1747,8 +1743,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1813,8 +1809,8 @@ public class ServerPermissions {
 
 		try {
 
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1882,8 +1878,8 @@ public class ServerPermissions {
 		try {
 
 			// Signing in OmniPCX
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 			// Click on edit permissions
 			driver.findElement(By.xpath(
@@ -1979,8 +1975,8 @@ public class ServerPermissions {
 		}
 
 		try {
-			((SharedFunctions)sf).loginServerAdmin();
-			((SharedFunctions)sf).clickPermissios();
+			((SharedFunctions)sf).loginServerAdmin(driver);
+			((SharedFunctions)sf).clickPermissios(driver);
 
 //      //  Click on copy Server admin
 //       driver.findElement(By.xpath("/html/body/form/table/tbody/tr[2]/td/table/tbody/tr[4]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[5]/td/div/table/tbody/tr[1]/td[3]/div/img[2]")).click();
@@ -2227,8 +2223,9 @@ public class ServerPermissions {
 		}
 
 	}
+	
 
-	@AfterTest
+	@AfterClass
 	public void afterTest() {
 
 		try {

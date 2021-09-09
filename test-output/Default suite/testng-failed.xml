@@ -3,28 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SiteAdministration.ServerPermissions">
+      <class name="SiteAdministration.NewTest">
         <methods>
-          <include name="verifyPermissionforPacketizerinGroup"/>
-          <include name="verifyPermissionforEquipmentinGroup"/>
-          <include name="verifyViewServerPermissionAgainstPage"/>
-          <include name="verifyPermissionforBranchinGroup"/>
-          <include name="verifyPermissionforUserinGroups"/>
-          <include name="verifyPermissionforStorageSettingsinGroup"/>
-          <include name="verifyPermissionforTrunkinGroup"/>
-          <include name="verifyPermissionforSIPTrunkinGroup"/>
           <include name="afterTest"/>
-          <include name="verifyPermissionforTracesinGroup"/>
-          <include name="verifyPermissionforSysteminGroup"/>
-          <include name="verifyViewServerPermissiondisabled"/>
+          <include name="ClearBranchTable"/>
           <include name="beforeTest"/>
-          <include name="verifyPermissionforNodesinGroup"/>
-          <include name="verifyPermissionforServerIncidentsinGroup"/>
-          <include name="verifyPermissionforEmailTemplateinGroup"/>
-          <include name="verifyEnablePermissioncbEnabledwhenViewUsersnotenabled"/>
-          <include name="verifyPermissionforBoardinGroup"/>
         </methods>
-      </class> <!-- SiteAdministration.ServerPermissions -->
+      </class> <!-- SiteAdministration.NewTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

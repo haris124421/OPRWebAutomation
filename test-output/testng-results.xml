@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="29" total="30" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-30T16:32:09 PKT" name="Suite" finished-at="2021-08-30T16:32:23 PKT" duration-ms="13782">
+  <suite started-at="2021-09-08T17:47:07 PKT" name="Default suite" finished-at="2021-09-08T17:47:36 PKT" duration-ms="28722">
     <groups>
     </groups>
-    <test started-at="2021-08-30T16:32:09 PKT" name="Test" finished-at="2021-08-30T16:32:23 PKT" duration-ms="13782">
-      <class name="SiteAdministration.ServerPermissions">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:SiteAdministration.ServerPermissions@20ce78ec]" started-at="2021-08-30T16:32:09 PKT" name="beforeTest" finished-at="2021-08-30T16:32:10 PKT" duration-ms="1332" status="PASS">
+    <test started-at="2021-09-08T17:47:07 PKT" name="Default test" finished-at="2021-09-08T17:47:36 PKT" duration-ms="28722">
+      <class name="SiteAdministration.NewTest1">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:SiteAdministration.NewTest1@3d74bf60]" started-at="2021-09-08T17:47:07 PKT" name="beforeTest" finished-at="2021-09-08T17:47:08 PKT" duration-ms="1340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="verifyDefaultPermissionGroup()[pri:0, instance:SiteAdministration.ServerPermissions@20ce78ec]" started-at="2021-08-30T16:32:10 PKT" name="verifyDefaultPermissionGroup" finished-at="2021-08-30T16:32:18 PKT" duration-ms="8054" status="PASS">
+        <test-method signature="ClearBranchTable()[pri:0, instance:SiteAdministration.NewTest1@3d74bf60]" started-at="2021-09-08T17:47:08 PKT" name="ClearBranchTable" finished-at="2021-09-08T17:47:17 PKT" duration-ms="8339" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyDefaultPermissionGroup -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:SiteAdministration.ServerPermissions@20ce78ec]" started-at="2021-08-30T16:32:18 PKT" name="afterTest" finished-at="2021-08-30T16:32:23 PKT" duration-ms="4362" status="PASS">
+        </test-method> <!-- ClearBranchTable -->
+        <test-method signature="DeletePermissionGroupsOtherthanDefault()[pri:0, instance:SiteAdministration.NewTest1@3d74bf60]" started-at="2021-09-08T17:47:17 PKT" name="DeletePermissionGroupsOtherthanDefault" finished-at="2021-09-08T17:47:36 PKT" duration-ms="18864" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeletePermissionGroupsOtherthanDefault -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:SiteAdministration.NewTest1@3d74bf60]" started-at="2021-09-08T17:47:36 PKT" name="afterTest" finished-at="2021-09-08T17:47:36 PKT" duration-ms="142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- SiteAdministration.ServerPermissions -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- SiteAdministration.NewTest1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
